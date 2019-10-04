@@ -1,0 +1,8 @@
+E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute.Entity\bin\Debug\netcoreapp2.2\Paycompute.Entity.deps.json
+E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute.Entity\bin\Debug\netcoreapp2.2\Paycompute.Entity.dll
+E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute.Entity\bin\Debug\netcoreapp2.2\Paycompute.Entity.pdb
+E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute.Entity\obj\Debug\netcoreapp2.2\Paycompute.Entity.csproj.CoreCompileInputs.cache
+E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute.Entity\obj\Debug\netcoreapp2.2\Paycompute.Entity.AssemblyInfoInputs.cache
+E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute.Entity\obj\Debug\netcoreapp2.2\Paycompute.Entity.AssemblyInfo.cs
+E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute.Entity\obj\Debug\netcoreapp2.2\Paycompute.Entity.dll
+E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute.Entity\obj\Debug\netcoreapp2.2\Paycompute.Entity.pdb

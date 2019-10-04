@@ -1,0 +1,14 @@
+E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute.Services\bin\Debug\netcoreapp2.2\Paycompute.Services.deps.json
+E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute.Services\bin\Debug\netcoreapp2.2\Paycompute.Services.dll
+E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute.Services\bin\Debug\netcoreapp2.2\Paycompute.Services.pdb
+E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute.Services\bin\Debug\netcoreapp2.2\Paycompute.Entity.dll
+E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute.Services\bin\Debug\netcoreapp2.2\Paycompute.Persistence.dll
+E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute.Services\bin\Debug\netcoreapp2.2\Paycompute.Entity.pdb
+E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute.Services\bin\Debug\netcoreapp2.2\Paycompute.Persistence.pdb
+E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute.Services\obj\Debug\netcoreapp2.2\Paycompute.Services.csprojAssemblyReference.cache
+E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute.Services\obj\Debug\netcoreapp2.2\Paycompute.Services.csproj.CoreCompileInputs.cache
+E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute.Services\obj\Debug\netcoreapp2.2\Paycompute.Services.AssemblyInfoInputs.cache
+E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute.Services\obj\Debug\netcoreapp2.2\Paycompute.Services.AssemblyInfo.cs
+E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute.Services\obj\Debug\netcoreapp2.2\Paycompute.Services.csproj.CopyComplete
+E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute.Services\obj\Debug\netcoreapp2.2\Paycompute.Services.dll
+E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute.Services\obj\Debug\netcoreapp2.2\Paycompute.Services.pdb
