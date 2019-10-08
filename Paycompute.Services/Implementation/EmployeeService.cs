@@ -75,6 +75,9 @@ namespace Paycompute.Services.Implementation
             throw new NotImplementedException();
         }
 
-     
+        public object GetByID(object id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

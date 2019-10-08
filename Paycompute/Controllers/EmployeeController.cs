@@ -17,6 +17,8 @@ namespace Paycompute.Controllers
         private readonly IEmployeeService _employeeService;
 
         private readonly HostingEnvironment _hostingenvironment;
+        private int id;
+
         public EmployeeController(IEmployeeService employeeService, HostingEnvironment hostingenvironment)
         {
             _employeeService = employeeService;
@@ -210,11 +212,11 @@ namespace Paycompute.Controllers
 
 
         [HttpGet]
-        public IActionResult Detail(int Id)
+        public IActionResult Detail(int id)
         {
 
             var employee = _employeeService.GetByID(id);
-            if(employee ==null)
+            if(employee == null)
             {
 
                 return NotFound();
@@ -248,9 +250,40 @@ namespace Paycompute.Controllers
             return View(model);
         }
 
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
 
 
+            var employee = _employeeService.GetByID(id);
 
+
+            if (employee == null)
+            {
+
+                return NotFound();
+
+            }
+
+            var model = new EmployeeDeleteViewModel()
+            {
+
+                Id = employee.Id,
+                FullName = employee.FullName
+            };
+            return View(model);
+
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(EmployeeDeleteViewModel model)
+        {
+           await  _employeeService.Delete(model.Id);
+            return RedirectToAction(nameof(Index));
+            
+
+        }
 
     }
 }

@@ -36,3 +36,4 @@ E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute\obj\Debug\netcoreapp2.2\P
 E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute\obj\Debug\netcoreapp2.2\Paycompute.csproj.CopyComplete
 E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute\obj\Debug\netcoreapp2.2\Paycompute.dll
 E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute\obj\Debug\netcoreapp2.2\Paycompute.pdb
+E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute\obj\Debug\netcoreapp2.2\Razor\Views\Employee\Index.g.cshtml.cs
