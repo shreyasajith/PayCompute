@@ -209,6 +209,46 @@ namespace Paycompute.Controllers
         }
 
 
+        [HttpGet]
+        public IActionResult Detail(int Id)
+        {
+
+            var employee = _employeeService.GetByID(id);
+            if(employee ==null)
+            {
+
+                return NotFound();
+
+            }
+
+            EmployeeDetailViewModel model = new EmployeeDetailViewModel()
+            {
+
+                Id = employee.Id,
+                EmployeeNo = employee.EmployeeNo,
+                FullName = employee.FullName,
+
+
+                Gender = employee.Gender,
+                Email = employee.Email,
+                DOB = employee.DOB,
+                DateJoined = employee.DateJoined,
+                NationalInsuranceNo = employee.NationalInsuranceNo,
+                PaymentMetod = employee.PaymentMetod,
+                StudentLoan = employee.StudentLoan,
+                UnionMember = employee.UnionMember,
+                Address = employee.Address,
+                City = employee.City,
+                Phone = employee.Phone,
+                PostCode = employee.PostCode,
+                Designation = employee.Designation,
+                ImageUrl = employee.ImageUrl,
+
+            };
+            return View(model);
+        }
+
+
 
 
 

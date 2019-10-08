@@ -25,10 +25,6 @@ namespace Paycompute.Services
         decimal StudentLoanRepaymentAmount(int id,  decimal totalAmount);
 
         IEnumerable<Employee> GetAll();
-
-
-
-
-
+        object GetByID(object id);
     }
 }
