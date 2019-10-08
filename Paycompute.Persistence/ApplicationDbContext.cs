@@ -13,11 +13,8 @@ namespace Paycompute.Persistence
             : base(options)
         {
 
-
         }
-
-     
-
+        
         public DbSet<PaymentRecord> PaymentRecords { get; set; }
 
 

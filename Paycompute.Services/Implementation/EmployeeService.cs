@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Paycompute.Entity;
 using Paycompute.Persistence;
+using Microsoft.EntityFrameworkCore.Design;
 
 namespace Paycompute.Services.Implementation
 {

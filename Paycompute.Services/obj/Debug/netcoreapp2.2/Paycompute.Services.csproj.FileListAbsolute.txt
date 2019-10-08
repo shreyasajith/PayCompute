@@ -1,4 +1,6 @@
 E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute.Services\bin\Debug\netcoreapp2.2\Paycompute.Services.deps.json
+E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute.Services\bin\Debug\netcoreapp2.2\Paycompute.Services.runtimeconfig.json
+E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute.Services\bin\Debug\netcoreapp2.2\Paycompute.Services.runtimeconfig.dev.json
 E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute.Services\bin\Debug\netcoreapp2.2\Paycompute.Services.dll
 E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute.Services\bin\Debug\netcoreapp2.2\Paycompute.Services.pdb
 E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute.Services\bin\Debug\netcoreapp2.2\Paycompute.Entity.dll
