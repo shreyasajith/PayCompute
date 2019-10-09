@@ -40,3 +40,10 @@ E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute\obj\Debug\netcoreapp2.2\R
 E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute\obj\Debug\netcoreapp2.2\Razor\Views\Employee\Create.g.cshtml.cs
 E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute\obj\Debug\netcoreapp2.2\Razor\Views\Employee\Edit.g.cshtml.cs
 E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute\obj\Debug\netcoreapp2.2\Razor\Views\Employee\Detail.g.cshtml.cs
+E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute\obj\Debug\netcoreapp2.2\Razor\Views\Employee\Delete.g.cshtml.cs
+E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute\obj\Debug\netcoreapp2.2\Razor\Views\Pay\Index.g.cshtml.cs
+E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute\obj\Debug\netcoreapp2.2\Razor\Views\Pay\Create.g.cshtml.cs
+E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute\obj\Debug\netcoreapp2.2\Razor\Views\Pay\Detail.g.cshtml.cs
+E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute\obj\Debug\netcoreapp2.2\Razor\Views\Pay\PaySlip.g.cshtml.cs
+E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute\bin\Debug\netcoreapp2.2\WkHTMLtoPDF\wkhtmltoimage.exe
+E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute\bin\Debug\netcoreapp2.2\WkHTMLtoPDF\wkhtmltopdf.exe

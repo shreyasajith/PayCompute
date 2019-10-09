@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+    "signature": "1a8d83f408c2c89cabaaece1e3cf73627203874b"
   },
   "compilationOptions": {
     "defines": [
@@ -28,13 +28,29 @@
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
           "Microsoft.NETCore.App": "2.2.0",
           "Paycompute.Entity": "1.0.0",
-          "Paycompute.Services": "1.0.0"
+          "Paycompute.Services": "1.0.0",
+          "RotativaCore": "2.2.0"
         },
         "runtime": {
           "Paycompute.dll": {}
         },
         "compile": {
           "Paycompute.dll": {}
+        }
+      },
+      "RotativaCore/2.2.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Authentication.Cookies": "2.2.0",
+          "Microsoft.AspNetCore.Mvc": "2.2.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/RotativaCore.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/RotativaCore.dll": {}
         }
       },
       "Paycompute.Entity/1.0.0": {
@@ -52,7 +68,8 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.2.0",
           "Microsoft.EntityFrameworkCore": "2.2.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.2.0",
-          "Paycompute.Entity": "1.0.0"
+          "Paycompute.Entity": "1.0.0",
+          "RotativaCore": "2.2.0"
         },
         "runtime": {
           "Paycompute.Persistence.dll": {}
@@ -3275,6 +3292,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "RotativaCore/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OIxrnyn4Q0mmht9wj49+ECXi8JR60tuZaXdAU+2XHbP/p/d0OMi6BZahcuRqKhbd5oCvafl2fwWdzoh/wZsjtA==",
+      "path": "rotativacore/2.2.0",
+      "hashPath": "rotativacore.2.2.0.nupkg.sha512"
     },
     "Paycompute.Entity/1.0.0": {
       "type": "project",

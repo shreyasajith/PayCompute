@@ -1,9 +1,9 @@
-﻿using Paycompute.Entity;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using Paycompute.Entity;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore.Design;
 
 namespace Paycompute.Services
 {
@@ -27,6 +27,6 @@ namespace Paycompute.Services
         IEnumerable<Employee> GetAll();
 
         IEnumerable<SelectListItem> GetAllEmployeesForPayroll();
-        object GetByID(object id);
+        //object GetByID(object id);
     }
 }

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Paycompute.Entity;
 using Paycompute.Models;
 using Paycompute.Services;
-using Paycompute.Services.Implementation;
+using RotativaCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace Paycompute.Controllers
 {
+   // [Authorize(Roles = "Admin,Manager")]
     public class PayController : Controller
     {
         private readonly IPayComputationService _payComputationService;
@@ -21,26 +22,27 @@ namespace Paycompute.Controllers
         private decimal contractualEarnings;
         private decimal overtimeEarnings;
         private decimal totalEarnings;
-        private object tax;
+        private decimal tax;
         private decimal unionFee;
         private decimal studentLoan;
-        private object nationalInsurance;
+        private decimal nationalInsurance;
         private decimal totalDeduction;
 
-        public PayController(IPayComputationService payComputationService, IEmployeeService employeeService,
-                             ITaxService taxService,
+        public PayController(IPayComputationService payComputationService,
+                            IEmployeeService employeeService,
+                            ITaxService taxService,
                             INationalInsuranceContributionService nationalInsuranceContributionService)
-            {
+        {
             _payComputationService = payComputationService;
             _employeeService = employeeService;
-            //PayComputationService = payComputationService;
+            _taxService = taxService;
+            _nationalInsuranceContributionService = nationalInsuranceContributionService;
         }
 
         public IActionResult Index()
         {
             var payRecords = _payComputationService.GetAll().Select(pay => new PaymentRecordIndexViewModel
-
-                 {
+            {
                 Id = pay.Id,
                 EmployeeId = pay.EmployeeId,
                 FullName = pay.FullName,
@@ -56,20 +58,19 @@ namespace Paycompute.Controllers
             return View(payRecords);
         }
 
-
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             ViewBag.employees = _employeeService.GetAllEmployeesForPayroll();
             ViewBag.taxYears = _payComputationService.GetAllTaxYear();
+
             var model = new PaymentRecordCreateViewModel();
             return View(model);
         }
 
-
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create(PaymentRecordCreateViewModel model)
         {
             if (ModelState.IsValid)
@@ -89,7 +90,7 @@ namespace Paycompute.Controllers
                     ContractualHours = model.ContractualHours,
                     OvertTimeHours = overtimeHrs = _payComputationService.OvertimeHours(model.HoursWorked, model.ContractualHours),
                     ContractualEarning = contractualEarnings = _payComputationService.ContractualEarnings(model.ContractualHours, model.HoursWorked, model.HourlyRate),
-                    OvertimeEarnings = overtimeEarnings = _payComputationService.OvertimeEarnings(_payComputationService.OvertimeRate(model.HourlyRate), overtimeHrs),
+                    OvertimeEarnings = overtimeEarnings = _payComputationService.OvertimeEarnings(_payComputationService.Overtimerate(model.HourlyRate), overtimeHrs),
                     TotalEarnings = totalEarnings = _payComputationService.TotalEarnings(overtimeEarnings, contractualEarnings),
                     Tax = tax = _taxService.TaxAmount(totalEarnings),
                     UnionFee = unionFee = _employeeService.UnionFees(model.EmployeeId),
@@ -103,8 +104,97 @@ namespace Paycompute.Controllers
             }
             ViewBag.employees = _employeeService.GetAllEmployeesForPayroll();
             ViewBag.taxYears = _payComputationService.GetAllTaxYear();
+
             return View();
         }
 
+        public IActionResult Detail(int id)
+        {
+            var paymentRecord = _payComputationService.GetByID(id);
+            if (paymentRecord == null)
+            {
+                return NotFound();
+            }
+
+            var model = new PaymentRecordDetailViewModel()
+            {
+                Id = paymentRecord.Id,
+                EmployeeId = paymentRecord.EmployeeId,
+                FullName = paymentRecord.FullName,
+                NiNo = paymentRecord.NiNo,
+                PayDate = paymentRecord.PayDate,
+                PayMonth = paymentRecord.PayMonth,
+                TaxYearId = paymentRecord.TaxYearID,
+                Year = _payComputationService.GetTaxYearById(paymentRecord.TaxYearID).YearOfTax,
+                TaxCode = paymentRecord.TaxCode,
+                HourlyRate = paymentRecord.HourlyRate,
+                HoursWorked = paymentRecord.HoursWorked,
+                ContractualHours = paymentRecord.ContractualHours,
+                OvertimeHours = paymentRecord.OvertTimeHours,
+                OvertimeRate = _payComputationService.Overtimerate(paymentRecord.HourlyRate),
+                ContractualEarnings = paymentRecord.ContractualEarning,
+                OvertimeEarnings = paymentRecord.OvertimeEarnings,
+                Tax = paymentRecord.Tax,
+                NIC = paymentRecord.NIC,
+                UnionFee = paymentRecord.UnionFee,
+                SLC = paymentRecord.SLC,
+                TotalEarnings = paymentRecord.TotalEarnings,
+                TotalDeduction = paymentRecord.TotalDeduction,
+                Employee = paymentRecord.Employee,
+                TaxYear = paymentRecord.TaxYear,
+                NetPayment = paymentRecord.NetPayment
+            };
+            return View(model);
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult Payslip(int id)
+        {
+            var paymentRecord = _payComputationService.GetByID(id);
+            if (paymentRecord == null)
+            {
+                return NotFound();
+            }
+
+            var model = new PaymentRecordDetailViewModel()
+            {
+                Id = paymentRecord.Id,
+                EmployeeId = paymentRecord.EmployeeId,
+                FullName = paymentRecord.FullName,
+                NiNo = paymentRecord.NiNo,
+                PayDate = paymentRecord.PayDate,
+                PayMonth = paymentRecord.PayMonth,
+                TaxYearId = paymentRecord.TaxYearID,
+                Year = _payComputationService.GetTaxYearById(paymentRecord.TaxYearID).YearOfTax,
+                TaxCode = paymentRecord.TaxCode,
+                HourlyRate = paymentRecord.HourlyRate,
+                HoursWorked = paymentRecord.HoursWorked,
+                ContractualHours = paymentRecord.ContractualHours,
+                OvertimeHours = paymentRecord.OvertTimeHours,
+                OvertimeRate = _payComputationService.Overtimerate(paymentRecord.HourlyRate),
+                ContractualEarnings = paymentRecord.ContractualEarning,
+                OvertimeEarnings = paymentRecord.OvertimeEarnings,
+                Tax = paymentRecord.Tax,
+                NIC = paymentRecord.NIC,
+                UnionFee = paymentRecord.UnionFee,
+                SLC = paymentRecord.SLC,
+                TotalEarnings = paymentRecord.TotalEarnings,
+                TotalDeduction = paymentRecord.TotalDeduction,
+                Employee = paymentRecord.Employee,
+                TaxYear = paymentRecord.TaxYear,
+                NetPayment = paymentRecord.NetPayment
+            };
+            return View(model);
+        }
+
+        public IActionResult GeneratePayslipPdf(int id)
+        {
+            var payslip = new ActionAsPdf("Payslip", new { id = id })
+            {
+                FileName = "payslip.pdf"
+            };
+            return payslip;
+        }
     }
 }
