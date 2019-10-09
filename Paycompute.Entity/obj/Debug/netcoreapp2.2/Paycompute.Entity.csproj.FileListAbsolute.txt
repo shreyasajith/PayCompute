@@ -6,3 +6,4 @@ E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute.Entity\obj\Debug\netcorea
 E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute.Entity\obj\Debug\netcoreapp2.2\Paycompute.Entity.AssemblyInfo.cs
 E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute.Entity\obj\Debug\netcoreapp2.2\Paycompute.Entity.dll
 E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute.Entity\obj\Debug\netcoreapp2.2\Paycompute.Entity.pdb
+E:\Projects\ASP Dot NET Core MVC\Paycompute\Paycompute.Entity\obj\Debug\netcoreapp2.2\Paycompute.Entity.csprojAssemblyReference.cache
