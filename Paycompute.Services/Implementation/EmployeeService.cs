@@ -101,12 +101,26 @@ namespace Paycompute.Services.Implementation
 
         public decimal UnionFees(int id)
         {
-            throw new NotImplementedException();
+            var employee = GetByID(id);
+            var fee = employee.UnionMember == UnionMember.Yes ? 10m : 0m;
+            return fee;
         }
 
         public object GetByID(object id)
         {
             throw new NotImplementedException();
+        }
+
+        public IEnumerable<SelectListItem> GetAllEmployeesForPayroll()
+        {
+            return GetAll().Select(emp => new SelectListItem()
+            {
+                Text = emp.FullName,
+                Value = emp.Id.ToString()
+                   
+ 
+           }
+            );
         }
     }
 }

@@ -11,6 +11,9 @@ namespace Paycompute.Services
 
         Task CreateAsync(PaymentRecord paymentRecord);
         PaymentRecord GetByID(int Id);
+
+        TaxYear GetTaxYearById(int Id);
+
         IEnumerable<PaymentRecord> GetAll();
         IEnumerable<SelectListItem> GetAllTaxYear();
 

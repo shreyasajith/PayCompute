@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Paycompute.Services.Implementation
 {
-    public class NationalInsuranceContributionService : INationalInsuranceContributionService
+    public class INationalInsuranceContributionService : Services.INationalInsuranceContributionService
     {
 
         private decimal NIRate;
