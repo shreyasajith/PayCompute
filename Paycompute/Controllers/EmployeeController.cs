@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting.Internal;
 using Microsoft.AspNetCore.Mvc;
 using Paycompute.Entity;
@@ -11,6 +12,8 @@ using Paycompute.Services;
 
 namespace Paycompute.Controllers
 {
+
+    [Authorize]
     public class EmployeeController :Controller
     {
 
@@ -26,7 +29,7 @@ namespace Paycompute.Controllers
 
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int? pageNumber)
         {
             var employees = _employeeService.GetAll().Select(employee => new EmployeeIndexViewModel
             {
@@ -43,7 +46,8 @@ namespace Paycompute.Controllers
 
             }
             ).ToList();
-            return View(employees);
+            int pageSize = 4;
+            return View(EmployeeListPagination<EmployeeIndexViewModel>.Create(employees, pageNumber ?? 1, pageSize) );
         }
 
         [HttpGet]
